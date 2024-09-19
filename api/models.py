@@ -11,3 +11,10 @@ class Courses(models.Model):
     
     def __str__(self) :
         return self.title
+
+class Student(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.PositiveBigIntegerField()
+    email=models.EmailField()
+    qua=models.CharField(max_length=100)
+    course=models.ForeignKey(Courses,on_delete=models.CASCADE)
